@@ -14,7 +14,7 @@ Here is the actual solution.
 
 <img width="498" alt="Screen Shot 2023-12-10 at 5 25 17 PM" src="https://github.com/sakethkura/CMSC398LPresentation/assets/49348685/b058e642-b8f4-4c71-a2b0-7fe563d6efa9">
 
-Here, we create a max heap based on the frequency of the tasks as previously mentioned. We then use a queue as a waiting area for tasks that have been processed and are in the cool-down time. We also create a time variable to keep track of the total elapsed time. Essentially, when we process a task and its frequency is > 1, then we add it the the queue with with its exit time. If the queue still exists and the top element's time has been reached, then we pop it off the queue and add it back to the max heap to be processed. Once the max heap and queue have no more elements, then we can return the time since all of the tasks have been processed. 
+To start with, if there is no cool time, then the total time will be the number of tasks to process. Here, we create a max heap based on the frequency of the tasks as previously mentioned. We then use a queue as a waiting area for tasks that have been processed and are in the cool-down time. We also create a time variable to keep track of the total elapsed time. Essentially, when we process a task and its frequency is > 1, then we add it to the queue with the time it is done cooling down. If the queue still exists and the top element's time has been reached, then we pop it off the queue and add it back to the max heap to be processed. Once the max heap and queue have no more elements, then we can return the time since all of the tasks have been processed. 
 
 Time Complexity
 
