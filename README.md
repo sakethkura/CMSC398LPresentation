@@ -1,4 +1,4 @@
-# CMSC398LPresentation
+# CMSC398L Presentation
 
 I will be talking about the Task Scheduler problem. I found this problem cool because it involves handling cases with priority and processing a list of tasks in the most optimal way. Here is the problem statement.
 
