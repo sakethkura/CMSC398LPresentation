@@ -2,52 +2,25 @@
 
 I will be talking about the Task Scheduler problem. I found this problem cool because it involves handling cases with priority and processing a list of tasks in the most optimal way. Here is the problem statement.
 
-Given a characters array tasks, representing the tasks a CPU needs to do, where each letter represents a different task. Tasks could be done in any order. Each task is done in one unit of time. For each unit of time, the CPU could complete either one task or just be idle.
 
-However, there is a non-negative integer n that represents the cooldown period between two same tasks (the same letter in the array), that is that there must be at least n units of time between any two same tasks.
-
-Return the least number of units of times that the CPU will take to finish all the given tasks.
-
-Example 1:
-
-Input: tasks = ["A","A","A","B","B","B"], n = 2
-Output: 8
-Explanation: 
-A -> B -> idle -> A -> B -> idle -> A -> B
-There is at least 2 units of time between any two same tasks.
-Example 2:
-
-Input: tasks = ["A","A","A","B","B","B"], n = 0
-Output: 6
-Explanation: On this case any permutation of size 6 would work since n = 0.
-["A","A","A","B","B","B"]
-["A","B","A","B","A","B"]
-["B","B","B","A","A","A"]
-...
-And so on.
-Example 3:
-
-Input: tasks = ["A","A","A","A","A","A","B","C","D","E","F","G"], n = 2
-Output: 16
-Explanation: 
-One possible solution is
-A -> B -> C -> A -> D -> E -> A -> F -> G -> A -> idle -> idle -> A -> idle -> idle -> A
- 
-
-Constraints:
-
-1 <= task.length <= 104
-tasks[i] is upper-case English letter.
-The integer n is in the range [0, 100].
+<img width="696" alt="Screen Shot 2023-12-10 at 5 26 59 PM" src="https://github.com/sakethkura/CMSC398LPresentation/assets/49348685/09034027-04a5-4426-96c3-7889d947997d">
 
 
-Some things to consider are that once we finish a task (or letter), we must reach the cool down timer in order to start the same task again. Another thing is that if there is no cool down timer, then the total amount of time will be the total number of tasks.
+Some things to consider are that once we finish a task (or letter), we must reach the cool-down timer to start the same task again. Another thing is that if there is no cool-down timer, then the total amount of time will be the total number of tasks.
 
-My initial approach was to use to store the tasks in terms of their frequency and then use a max heap to sort them from largest to smallest. Then, when I process the highest priority task, I would decrease the count and add it back to the max heap if it still exists. But, I was struggling where to go from there.
+My initial approach was to store the tasks in terms of their frequency and then use a max heap to sort them from largest to smallest. Then, when I process the highest priority task, I would decrease the count and add it back to the max heap if it still exists. But, I was struggling with where to go from there.
 
 Here is the actual solution.
 
-<img width="509" alt="Screen Shot 2023-12-10 at 5 20 07 PM" src="https://github.com/sakethkura/CMSC398LPresentation/assets/49348685/cff3d48a-4db9-4891-a24f-fcac23438719">
+<img width="498" alt="Screen Shot 2023-12-10 at 5 25 17 PM" src="https://github.com/sakethkura/CMSC398LPresentation/assets/49348685/b058e642-b8f4-4c71-a2b0-7fe563d6efa9">
+
+Here, we create a max heap based on the frequency of the tasks as previously mentioned. We then use a queue as a waiting area for tasks that have been processed and are in the cool-down time. We also create a time variable to keep track of the total elapsed time. Essentially, when we process a task and its frequency is > 1, then we add it the the queue with with its exit time. If the queue still exists and the top element's time has been reached, then we pop it off the queue and add it back to the max heap to be processed. Once the max heap and queue have no more elements, then we can return the time since all of the tasks have been processed. 
+
+Time Complexity
+
+
+
+
 
 
 
