@@ -18,6 +18,14 @@ Here, we create a max heap based on the frequency of the tasks as previously men
 
 Time Complexity
 
+In the worst case, we may have a situation where we get same task many times, and so we would need to wait after every single task. Within the code, there are only traversals across the tasks in the worst case to make and process the max heap. So, the time complexity will be O(len(tasks) * n), where n = cool-down time
+
+Space Complexity
+
+In the code, we are creating the max heap and queue. In the worst case, the max heap would store len(tasks) elements and same with the queue. Since, O(len(tasks) + O(len(tasks) = O(len(tasks), the space complexity would be O(len(tasks).
+
+This is a pretty efficient solution to this problem. 
+
 
 
 
