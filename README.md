@@ -47,6 +47,10 @@ My initial approach was to use to store the tasks in terms of their frequency an
 
 Here is the actual solution.
 
+<img width="509" alt="Screen Shot 2023-12-10 at 5 20 07 PM" src="https://github.com/sakethkura/CMSC398LPresentation/assets/49348685/cff3d48a-4db9-4891-a24f-fcac23438719">
+
+
+
 
 
 
